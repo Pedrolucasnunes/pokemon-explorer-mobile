@@ -12,7 +12,7 @@ react-native-pokemon-explorer/**  linguist-generated=false
 *.js    linguist-language=JavaScript
 *.dart  linguist-language=Dart
 
-# Arquivos gerados por ferramenta — fora da contagem.
+# Arquivos gerados por ferramenta - fora da contagem.
 react-native-pokemon-explorer/package-lock.json  linguist-generated=true
 flutter-tela-pokemon/android/**                  linguist-generated=true
 

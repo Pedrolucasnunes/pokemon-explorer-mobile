@@ -14,7 +14,7 @@ os dois frameworks partindo do mesmo desenho de interface.
 ## Destaques técnicos
 
 - **Cache de promessas, não de resultados.** Guardar a *promessa* de cada
-  requisição — e não o resultado — faz a tela de abertura pré-carregar a
+  requisição, e não o resultado, faz a tela de abertura pré-carregar a
   listagem: quando o usuário chega, o dado já está pronto. Sem estado global
   e sem chamada repetida.
 - **81 movimentos resolvidos em 18 requisições.** Um índice montado a partir de
@@ -25,7 +25,7 @@ os dois frameworks partindo do mesmo desenho de interface.
   descartadas em vez de sobrescrever o resultado mais recente.
 - **A mesma tela em dois frameworks.** A tela de detalhes foi reimplementada em
   Flutter a partir do mesmo desenho, com modelos equivalentes aos adaptadores do
-  React Native — seria plugável a uma camada de rede sem alteração no widget.
+  React Native - seria plugável a uma camada de rede sem alteração no widget.
 - **Zero dependências de UI.** Ícones desenhados com primitivas e formatação
   numérica própria: bundle enxuto e resultado consistente entre dispositivos.
 
@@ -44,7 +44,7 @@ Splash ──replace──▶ Listagem ──push──▶ Detalhe do Pokémon �
 |:---:|:---:|
 | <img src="docs/screenshots/04-detalhe.png" width="240"> | <img src="docs/screenshots/05-movimento.png" width="240"> |
 
-<sub>Capturas do aplicativo em execução — emulador Pixel 7, Android 15.</sub>
+<sub>Capturas do aplicativo em execução - emulador Pixel 7, Android 15.</sub>
 
 ## A mesma tela nos dois frameworks
 
@@ -57,7 +57,7 @@ interface, para comparar os dois frameworks lado a lado.
 
 Cabeçalho colorido pelo tipo, chips, faixa de atributos e lista de movimentos
 com filtro por método são equivalentes nos dois. A diferença visível está na
-contagem de movimentos — 86 contra 25: a versão React Native consome a PokéAPI
+contagem de movimentos - 86 contra 25: a versão React Native consome a PokéAPI
 ao vivo, enquanto a versão Flutter usa um conjunto de dados em memória, sem
 camada de rede.
 
@@ -68,21 +68,21 @@ camada de rede.
 | **App principal** | React Native 0.86 · React 19.2 · Expo SDK 57 |
 | **Navegação** | React Navigation 7 (native stack) |
 | **Tela comparativa** | Flutter · Dart SDK ≥ 3.4 |
-| **API** | PokéAPI v2 — pública, sem autenticação |
-| **Dependências de UI** | nenhuma — ícones e formatação são próprios |
+| **API** | PokéAPI v2 - pública, sem autenticação |
+| **Dependências de UI** | nenhuma - ícones e formatação são próprios |
 
 ## Funcionalidades
 
-- **Listagem paginada** — 20 itens por vez, com botão "Carregar mais".
-- **Busca por nome** — debounce de 400 ms, filtro local sobre um índice de nomes
+- **Listagem paginada** - 20 itens por vez, com botão "Carregar mais".
+- **Busca por nome** - debounce de 400 ms, filtro local sobre um índice de nomes
   em cache, com contador de resultados.
-- **Filtro por tipo** — régua horizontal montada a partir da API; o chip
+- **Filtro por tipo** - régua horizontal montada a partir da API; o chip
   selecionado assume a cor do próprio tipo.
-- **Filtros combináveis** — a busca por nome atua sobre o conjunto já restrito
+- **Filtros combináveis** - a busca por nome atua sobre o conjunto já restrito
   pelo tipo escolhido.
 - **Filtro por método de aprendizado** na lista de movimentos (Nível, MT/HM,
   Ovo, Tutor).
-- **Estados de interface** — skeleton no carregamento, tela de erro com código
+- **Estados de interface** - skeleton no carregamento, tela de erro com código
   HTTP e botão de repetir, e estado vazio distinto do estado de erro.
 
 ## Como executar
@@ -97,7 +97,7 @@ npm install
 npx expo start
 ```
 
-Com o Metro rodando, pressione `a` para Android ou `i` para iOS — ou leia o QR
+Com o Metro rodando, pressione `a` para Android ou `i` para iOS, ou leia o QR
 code com o app Expo Go.
 
 > Se o `npm install` reclamar de incompatibilidade de versões, rode
@@ -113,7 +113,7 @@ flutter run
 ```
 
 Só a pasta `android/` está versionada. O `flutter create .` regenera `ios/`,
-`web/` e desktop a partir do SDK — são artefatos gerados, sem código autoral.
+`web/` e desktop a partir do SDK - são artefatos gerados, sem código autoral.
 
 ## Arquitetura
 
@@ -174,7 +174,7 @@ listagem quanto o filtro por método da tela de detalhes, mudando apenas os dado
 recebidos.
 
 **Sem dependências desnecessárias.** Os ícones foram desenhados com `View` e
-`Text`, e a formatação numérica é manual em vez de `Intl` — o motor Hermes nem
+`Text`, e a formatação numérica é manual em vez de `Intl` - o motor Hermes nem
 sempre embarca a tabela de locales completa, o que faria "1.302" virar "1302"
 em alguns dispositivos.
 
@@ -189,16 +189,16 @@ preserva rolagem e filtros, porque a tela permanece montada na pilha.
 ## Limitações da PokéAPI contornadas
 
 **Número da MT.** A resposta de `/pokemon/{nome}` informa que o movimento é
-aprendido por `machine`, mas não devolve o número da MT — obtê-lo exigiria uma
+aprendido por `machine`, mas não devolve o número da MT - obtê-lo exigiria uma
 chamada a `/machine` por movimento. A listagem exibe `machine · MT/HM`.
 
 **Flags de movimento.** A v2 da API não expõe as flags, então não há dado de
 contato físico. O chip foi substituído por um de efeito colateral, alimentado
-por `meta.ailment` (Paralisia, Queimadura, Sono…) — informação real e mais útil
+por `meta.ailment` (Paralisia, Queimadura, Sono…) - informação real e mais útil
 ao usuário. Quando o movimento não causa efeito, o chip é omitido.
 
 **Tipo de cada movimento.** A resposta de `/pokemon/{nome}` lista os movimentos
-sem informar o tipo, e Bulbasaur tem 81 movimentos — uma chamada por linha seria
+sem informar o tipo, e Bulbasaur tem 81 movimentos - uma chamada por linha seria
 inviável. O tipo é resolvido por um índice construído a partir de `/type/{nome}`,
 que já devolve todos os movimentos daquele tipo: 18 requisições feitas uma única
 vez por sessão, reaproveitando o cache da régua de filtros. O índice carrega em
