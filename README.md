@@ -11,6 +11,24 @@ os dois frameworks partindo do mesmo desenho de interface.
   <img src="docs/demo.gif" width="260" alt="Navegação pelo aplicativo: rolagem, busca, filtro por tipo e telas de detalhe">
 </p>
 
+## Destaques técnicos
+
+- **Cache de promessas, não de resultados.** Guardar a *promessa* de cada
+  requisição — e não o resultado — faz a tela de abertura pré-carregar a
+  listagem: quando o usuário chega, o dado já está pronto. Sem estado global
+  e sem chamada repetida.
+- **81 movimentos resolvidos em 18 requisições.** Um índice montado a partir de
+  `/type/{nome}` resolve o tipo de todos os movimentos de uma vez, em vez de uma
+  chamada por linha. Carrega em paralelo à tela, que aparece sem esperar por ele.
+- **O que está na tela sempre corresponde ao filtro atual.** Cada carga da
+  listagem recebe um identificador, então respostas que chegam fora de ordem são
+  descartadas em vez de sobrescrever o resultado mais recente.
+- **A mesma tela em dois frameworks.** A tela de detalhes foi reimplementada em
+  Flutter a partir do mesmo desenho, com modelos equivalentes aos adaptadores do
+  React Native — seria plugável a uma camada de rede sem alteração no widget.
+- **Zero dependências de UI.** Ícones desenhados com primitivas e formatação
+  numérica própria: bundle enxuto e resultado consistente entre dispositivos.
+
 ```
 Splash ──replace──▶ Listagem ──push──▶ Detalhe do Pokémon ──push──▶ Detalhe do movimento
                         ◀────── goBack ──────  ◀────── goBack ──────
