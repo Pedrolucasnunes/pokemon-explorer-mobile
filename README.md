@@ -7,6 +7,10 @@ A aplicação principal é feita em **React Native (Expo)**. O repositório incl
 também a **reimplementação de uma das telas em Flutter**, para comparação entre
 os dois frameworks partindo do mesmo desenho de interface.
 
+<p align="center">
+  <img src="docs/demo.gif" width="260" alt="Navegação pelo aplicativo: rolagem, busca, filtro por tipo e telas de detalhe">
+</p>
+
 ```
 Splash ──replace──▶ Listagem ──push──▶ Detalhe do Pokémon ──push──▶ Detalhe do movimento
                         ◀────── goBack ──────  ◀────── goBack ──────
