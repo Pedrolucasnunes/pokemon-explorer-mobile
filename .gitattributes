@@ -1,20 +1,20 @@
 # Classificação de linguagens do GitHub (Linguist).
 #
-# A barra do repositório contabilizava apenas 108 bytes de JavaScript
+# Por padrão o GitHub contabilizava apenas 108 bytes de JavaScript
 # (o babel.config.js), ignorando os outros 79 KB da aplicação principal.
-# As diretivas abaixo desligam explicitamente as três exclusões
-# automáticas do Linguist para a árvore do React Native.
+# As duas primeiras regras desfazem a exclusão automática da árvore do
+# React Native; a terceira força a detecção dos arquivos .js.
 
 react-native-pokemon-explorer/**  linguist-vendored=false
 react-native-pokemon-explorer/**  linguist-generated=false
-react-native-pokemon-explorer/**  linguist-documentation=false
-react-native-pokemon-explorer/**  linguist-detectable=true
 
+*.js    linguist-detectable=true
 *.js    linguist-language=JavaScript
 *.dart  linguist-language=Dart
 
-# Scaffolding do Android gerado pelo `flutter create` — não é código autoral.
-flutter-tela-pokemon/android/**  linguist-generated=true
+# Arquivos gerados por ferramenta — fora da contagem.
+react-native-pokemon-explorer/package-lock.json  linguist-generated=true
+flutter-tela-pokemon/android/**                  linguist-generated=true
 
 # Screenshots e GIF do README.
 docs/**  linguist-documentation=true
