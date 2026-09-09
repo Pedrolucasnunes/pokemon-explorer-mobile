@@ -1,0 +1,23 @@
+# ---- Dependências e artefatos de build ----
+node_modules/
+.expo/
+.dart_tool/
+build/
+.gradle/
+.kotlin/
+
+# ---- IDE / editor ----
+.idea/
+*.iml
+.vscode/
+
+# ---- Configuração local da máquina ----
+local.properties
+
+# ---- Sistema operacional ----
+.DS_Store
+Thumbs.db
+
+# ---- Material da entrega acadêmica (fora do portfólio) ----
+*.docx
+ROTEIRO-VIDEO.md

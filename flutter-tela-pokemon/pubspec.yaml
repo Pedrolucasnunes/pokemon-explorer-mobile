@@ -1,0 +1,20 @@
+name: pokemon_detail_flutter
+description: >
+  Tela de detalhes do Pokémon reconstruída em Flutter — tecnologia secundária
+  do projeto da fase 2 da disciplina Desenvolvimento de Sistemas Mobile.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

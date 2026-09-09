@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "Pokémon Explorer",
+    "slug": "pokemon-explorer",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pedrolucas.pokemonexplorer"
+    },
+    "android": {
+      "package": "com.pedrolucas.pokemonexplorer",
+      "edgeToEdgeEnabled": true
+    }
+  }
+}
