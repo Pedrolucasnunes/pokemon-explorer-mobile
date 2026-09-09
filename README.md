@@ -24,6 +24,21 @@ Splash ──replace──▶ Listagem ──push──▶ Detalhe do Pokémon �
 
 <sub>Capturas do aplicativo em execução — emulador Pixel 7, Android 15.</sub>
 
+## A mesma tela nos dois frameworks
+
+A tela de detalhes foi reimplementada em Flutter a partir do mesmo desenho de
+interface, para comparar os dois frameworks lado a lado.
+
+| React Native (Expo) | Flutter |
+|:---:|:---:|
+| <img src="docs/screenshots/06-comparativo-react-native.png" width="280"> | <img src="docs/screenshots/07-comparativo-flutter.png" width="280"> |
+
+Cabeçalho colorido pelo tipo, chips, faixa de atributos e lista de movimentos
+com filtro por método são equivalentes nos dois. A diferença visível está na
+contagem de movimentos — 86 contra 25: a versão React Native consome a PokéAPI
+ao vivo, enquanto a versão Flutter usa um conjunto de dados em memória, sem
+camada de rede.
+
 ## Stack
 
 | | |
