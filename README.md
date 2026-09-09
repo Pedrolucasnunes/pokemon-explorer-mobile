@@ -12,6 +12,18 @@ Splash ──replace──▶ Listagem ──push──▶ Detalhe do Pokémon �
                         ◀────── goBack ──────  ◀────── goBack ──────
 ```
 
+## Telas
+
+| Listagem | Busca por nome | Filtro por tipo |
+|:---:|:---:|:---:|
+| <img src="docs/screenshots/01-listagem.png" width="240"> | <img src="docs/screenshots/02-busca.png" width="240"> | <img src="docs/screenshots/03-filtro-tipo.png" width="240"> |
+
+| Detalhe do Pokémon | Detalhe do movimento |
+|:---:|:---:|
+| <img src="docs/screenshots/04-detalhe.png" width="240"> | <img src="docs/screenshots/05-movimento.png" width="240"> |
+
+<sub>Capturas do aplicativo em execução — emulador Pixel 7, Android 15.</sub>
+
 ## Stack
 
 | | |
