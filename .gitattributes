@@ -1,0 +1,12 @@
+# Classificação de linguagens do GitHub (Linguist).
+# Sem isto a barra do repositório exibia "Dart 99.1%", ignorando o
+# JavaScript da aplicação principal.
+
+*.js   linguist-language=JavaScript
+*.dart linguist-language=Dart
+
+# Scaffolding do Android gerado pelo `flutter create` — não é código autoral.
+flutter-tela-pokemon/android/** linguist-generated=true
+
+# Screenshots do README.
+docs/** linguist-documentation=true
